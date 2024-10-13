@@ -1,0 +1,131 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+model Profissionais {
+  email            String       @id
+  senha            String
+  nome             String
+  telefone         String?
+  foto             String?      @db.VarChar(2048)
+  identificador    String?      @unique
+  pix              String?
+  permissao        Permissao    @relation(fields: [permissaoId], references: [id])
+  permissaoId      Int
+  especialidade    String
+  agendamentos     Agendamentos[]
+  consultas        Consultas[]
+  consultasAba     ConsultaAba[]
+  pagamentos       Pagamentos[]
+}
+
+model Pacientes{
+  cpf             String       @id
+  email           String?      @unique
+  nome            String
+  nome_responsavel String?
+  data_nascimento DateTime?
+  telefone        String?
+  endereco        String?
+  foto            String?      @db.VarChar(2048)
+  tipo_paciente   String?
+  laudos          String[] @db.VarChar(2048)
+  agendamentos    Agendamentos[]
+  consultas       Consultas[]
+  paciente_dados  Pacientes_dados[]
+  ConsultaAba     ConsultaAba[]
+  avaliacaoAba    AvaliacaoAba[] //Adicionado
+}
+model Pacientes_dados{
+  pacientes       Int @id @default(autoincrement())
+  paciente        Pacientes? @relation(fields: [pacienteId], references: [cpf])
+  pacienteId      String? @unique
+  peso            Float?      
+  altura          Float?
+  laudos          String[] @db.VarChar(2048)
+  comestiveis     String? @db.VarChar(2048)
+  tangiveis       String? @db.VarChar(2048)
+  fisicos         String? @db.VarChar(2048)
+  data            DateTime @default(now())
+  data_neuro      DateTime? @db.Date
+  alergicos       String?
+}
+
+model Agendamentos{
+  id              Int @id @default(autoincrement())
+  data            DateTime?
+  data_conclusao  DateTime? @db.Date
+  agendamento     String?
+  notas           String?
+  status          String?
+  profissional    Profissionais? @relation(fields: [profissionalId], references: [email])
+  profissionalId  String
+  paciente        Pacientes? @relation(fields: [pacienteId], references: [cpf])
+  pacienteId      String?
+  sala_consulta   Salas? @relation(fields: [sala], references: [id])
+  sala            Int?
+}
+model Salas{
+  id              Int @id @default(autoincrement())
+  notas           String?
+  agendamentos    Agendamentos[]
+}
+model Consultas{
+  id              Int @id @default(autoincrement())
+  consulta        String
+  data            DateTime @default(now())
+  hora_inicio     DateTime?
+  hora_fim        DateTime?
+  descricao       String?
+  laudos          String[] @db.VarChar(2048)
+  foto            String[] @db.VarChar(2048)
+  paciente        Pacientes? @relation(fields: [pacienteId], references: [cpf])
+  profissional    Profissionais? @relation(fields: [profissionalId], references: [email])
+  pacienteId      String?
+  profissionalId  String?
+}
+model ConsultaAba{
+  pacientes       Int @id @default(autoincrement())
+  paciente        Pacientes? @relation(fields: [pacienteId], references: [cpf])
+  pacienteId      String?
+  profissional    Profissionais? @relation(fields: [profissionalId], references: [email])
+  profissionalId  String?
+  data            DateTime?
+  hora_inicio     String?
+  hora_fim        String?
+  descricao_atividade String? @db.VarChar(2048)
+  Aplicacao1      String?
+  Aplicacao2      String?
+  Aplicacao3      String?
+  Aplicacao4      String?
+  Aplicacao5      String?
+  teste           String?
+  foto            String? @db.VarChar(2048)
+  observacoes     String? @db.VarChar(2048)
+}
+model AvaliacaoAba{
+  pacientes       Int @id @default(autoincrement())
+  paciente        Pacientes? @relation(fields: [pacienteId], references: [cpf])
+  pacienteId      String?
+  foto            String[] @db.VarChar(2048)
+}
+model Pagamentos{
+  id              Int @id @default(autoincrement())
+  pagamento       Float?
+  paciente        String?
+  tipo_pagamento  String?
+  profissional    Profissionais? @relation(fields: [profissionalId], references: [email])     
+  profissionalId  String?
+  metodo          String?
+  Data            DateTime @default(now())
+}
+model Permissao {
+  id               Int             @id @default(autoincrement())
+  acesso           String?
+  profissionais    Profissionais[]
+}
