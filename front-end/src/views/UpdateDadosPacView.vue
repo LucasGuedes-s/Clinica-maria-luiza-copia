@@ -222,7 +222,7 @@ export default {
             else {
                 this.id = this.cpf
             }
-            Axios.get(`https://clinica-maria-luiza.onrender.com/paciente/dados/${this.id}`, {
+            Axios.get(`https://clinica-maria-luiza-copia.onrender.com/paciente/dados/${this.id}`, {
                 headers: {
                     'Authorization': `Bearer ${token}`
                 }
@@ -320,7 +320,7 @@ export default {
                     this.data_neuro = this.dados.paciente[0].paciente_dados[0].data_neuro
                 }
                 // Envia os dados do paciente para o backend
-                await Axios.post(`https://clinica-maria-luiza.onrender.com/editar/dados/paciente`, {
+                await Axios.post(`https://clinica-maria-luiza-copia.onrender.com/editar/dados/paciente`, {
                     dados: {
                         cpf: this.dados.paciente[0].cpf,
                         nome: this.dados.paciente[0].nome,

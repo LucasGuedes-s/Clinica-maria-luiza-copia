@@ -217,7 +217,7 @@ export default {
             console.log(id, this.novo_val, novo_paciente, this.tipoPagamento, this.tipoPagamento)
             try{
                 const token = this.store.token;
-                Axios.post("https://clinica-maria-luiza.onrender.com/alterar/pagamento", {
+                Axios.post("https://clinica-maria-luiza-copia.onrender.com/alterar/pagamento", {
                     pagar: {
                         id: id,
                         valor: this.novo_val,
@@ -253,7 +253,7 @@ export default {
         },
         async getPagamentos() {
             const token = this.store.token
-            await Axios.get(`https://clinica-maria-luiza.onrender.com/pagamentos`, {
+            await Axios.get(`https://clinica-maria-luiza-copia.onrender.com/pagamentos`, {
                 headers: {
                     'Authorization': `Bearer ${token}`
                 }
@@ -281,7 +281,7 @@ export default {
                 }
             });
             await Axios({
-                url: `https://clinica-maria-luiza.onrender.com/pdf/pagamentos`,  // Altere a URL conforme necessário
+                url: `https://clinica-maria-luiza-copia.onrender.com/pdf/pagamentos`,  // Altere a URL conforme necessário
                 method: 'POST',
                 responseType: 'blob',
                 data: {

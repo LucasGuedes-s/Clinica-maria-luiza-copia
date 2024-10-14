@@ -251,7 +251,7 @@ export default {
                     Swal.showLoading();
                 }
             })
-            await Axios.post(`http://localhost:3000/cadastrar/agendamento`, {
+            await Axios.post(`https://clinica-maria-luiza-copia.onrender.com/cadastrar/agendamento`, {
                 agenda: {
                     agendamento: this.agendamento,
                     data: this.data,
@@ -287,7 +287,7 @@ export default {
     mounted() {
         ///profissionais/agendar
         const token = this.store.token
-        Axios.get("https://clinica-maria-luiza.onrender.com/pacientes", {
+        Axios.get("https://clinica-maria-luiza-copia.onrender.com/pacientes", {
             headers: {
                 'Authorization': `Bearer ${token}`
             }
@@ -296,7 +296,7 @@ export default {
         }).catch(Error => {
             console.error(Error)
         })
-        Axios.get("https://clinica-maria-luiza.onrender.com/profissionais/agendar", {
+        Axios.get("https://clinica-maria-luiza-copia.onrender.com/profissionais/agendar", {
             headers: {
                 'Authorization': `Bearer ${token}`
             }

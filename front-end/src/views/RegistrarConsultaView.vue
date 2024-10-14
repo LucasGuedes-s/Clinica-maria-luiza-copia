@@ -206,7 +206,7 @@ export default {
                 }
             });
             const profissionalId = this.store.usuario.usuario.email
-            await Axios.post("https://clinica-maria-luiza.onrender.com/consulta/registrar", {
+            await Axios.post("https://clinica-maria-luiza-copia.onrender.com/consulta/registrar", {
                 consulta: {
                     consulta: this.especialidade,
                     descricao: this.descricao,

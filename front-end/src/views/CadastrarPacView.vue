@@ -231,7 +231,7 @@ export default {
             }
             try {
                 // Envia os dados do paciente para o backend
-                await Axios.post(`https://clinica-maria-luiza.onrender.com/cadastrar/pacientes`, {
+                await Axios.post(`https://clinica-maria-luiza-copia.onrender.com/cadastrar/pacientes`, {
                     paciente: {
                         cpf: this.cpf,
                         nome: this.nome,

@@ -6,27 +6,6 @@
         <div>
             <GraficoEvolucao :dado="cpf" />
         </div>
-        <!--<div class="titulo_evolucao">
-            <h1>Evolução</h1>
-        </div>
-        <table>
-            <thead>
-                <tr>
-                    <th>Data</th>
-                    <th>Aplicação 01</th>
-                    <th>Aplicação 02</th>
-                    <th>Aplicação 03</th>
-                </tr>
-            </thead>
-            <tbody>
-                <tr v-for="consult in consulta" :key="consult.pacientes">
-                    <td>{{ formatDate(consult.data) }}</td>
-                    <td>{{ consult.Aplicacao1 }}</td>
-                    <td>{{ consult.Aplicacao2 }}</td>
-                    <td>{{ consult.Aplicacao3 }}</td>
-                </tr>
-            </tbody>
-        </table>-->
     </div>
 </template>
 
@@ -65,7 +44,7 @@ export default {
     },
     methods: {
         async getConsultas() {
-            await Axios.get(`https://clinica-maria-luiza.onrender.com/consultasAba/paciente/${this.cpf}`
+            await Axios.get(`https://clinica-maria-luiza-copia.onrender.com/consultasAba/paciente/${this.cpf}`
             ).then(response => {
                 const todasConsultas = response.data.consultas;
                 // Pegar os últimos 15 itens do array de consultas
