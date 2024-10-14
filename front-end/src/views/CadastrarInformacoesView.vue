@@ -197,6 +197,8 @@ export default {
                 const peso = parseFloat(this.peso)
                 const altura = parseFloat(this.altura)
                 // Envia os dados do paciente para o backend
+                console.log(this.cpf)
+                console.log()
                 await Axios.post(`https://clinica-maria-luiza-copia.onrender.com/dados/pacientes`, {
                     dados: {
                         pacienteId: this.cpf,
@@ -226,6 +228,13 @@ export default {
                     sessionStorage.removeItem('email');
                     router.push('/dashboard')
 
+                }).catch(error =>{
+                    Swal.fire({
+                        icon: 'error',
+                        title: 'Não foi possível realizar o cadastro',
+                        timer: 4000,
+                    });
+                    console.log(error)
                 })
             } catch (error) {
                 // Tratamento de erro

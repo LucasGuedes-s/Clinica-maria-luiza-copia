@@ -18,8 +18,8 @@
 
             </div>
             <div class="botoes_div">
-                <RouterLink to="/cadastrarinformacoes"><button class="evolucao_btn"
-                        v-if="usuario.paciente_dados.length === 0">Registrar dados</button></RouterLink>
+                <button class="evolucao_btn" @click="cadastrarInformacoes(usuario.cpf)"
+                        v-if="usuario.paciente_dados.length === 0">Registrar dados</button>
 
                 <button class="evolucao_btn" v-if="usuario.paciente_dados.length > 0"
                     @click="evolucao(usuario.cpf)">Evolução</button>
@@ -253,6 +253,10 @@ export default {
         }
     },
     methods: {
+        async cadastrarInformacoes(cpf){
+            sessionStorage.setItem('cpf', cpf);
+            this.$router.push({ name: 'cadastrarinformacoes' });
+        },
         async editarDados(cpf, email) {
             sessionStorage.setItem('cpf', cpf);
             sessionStorage.setItem('email', email);

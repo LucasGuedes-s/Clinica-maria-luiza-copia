@@ -105,7 +105,7 @@ table thead {
     color: #7E7E7E;
     font-family: 'Montserrat', sans-serif;
     font-size: 16px;
-    
+
 }
 @media (max-width: 768px) {
     .main-content_pagamentos {
@@ -120,6 +120,14 @@ table thead {
     .btn-pdf {
         font-size: 14px;
         /* Ajusta o botão para telas menores */
+    }
+    .btn_editarpag{
+        background-color: #F5F5F5;
+        border: 1px solid #D9D9D9;
+        cursor: pointer;
+        color: #7E7E7E;
+        font-family: 'Montserrat', sans-serif;
+        font-size: 10px;
     }
 }
 </style>
