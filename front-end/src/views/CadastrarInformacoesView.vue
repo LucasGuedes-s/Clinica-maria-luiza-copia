@@ -198,7 +198,6 @@ export default {
                 const altura = parseFloat(this.altura)
                 // Envia os dados do paciente para o backend
                 console.log(this.cpf)
-                console.log()
                 await Axios.post(`https://clinica-maria-luiza-copia.onrender.com/dados/pacientes`, {
                     dados: {
                         pacienteId: this.cpf,

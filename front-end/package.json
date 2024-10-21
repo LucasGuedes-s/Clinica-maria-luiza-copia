@@ -3,14 +3,17 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
+    "test:e2e": "playwright test",
     "serve": "vue-cli-service serve",
     "build": "vue-cli-service build"
   },
   "dependencies": {
+    "auto-playwright": "^1.16.0",
     "axios": "^1.7.2",
     "chart.js": "^4.4.4",
     "core-js": "^3.8.3",
     "firebase": "^10.13.0",
+    "graphql": "^16.9.0",
     "js-cookie": "^3.0.5",
     "pinia": "^2.2.0",
     "sweetalert": "^2.1.2",
@@ -19,8 +22,12 @@
     "vue-router": "^4.0.3"
   },
   "devDependencies": {
+    "@graphql-codegen/cli": "^5.0.3",
+    "@playwright/test": "^1.48.1",
+    "@types/node": "^22.7.7",
     "@vue/cli-plugin-babel": "~5.0.0",
     "@vue/cli-plugin-router": "~5.0.0",
-    "@vue/cli-service": "~5.0.0"
+    "@vue/cli-service": "~5.0.0",
+    "typescript": "^5.6.3"
   }
 }

@@ -7,9 +7,9 @@
             <form class="login_form" @submit.prevent="login">
                 <h1>Realizar login</h1>
                 <label for="email">E-mail</label>
-                <input type="text" v-model="email" placeholder="Digite o seu e-mail">
+                <input type="text" name="email" v-model="email" placeholder="Digite o seu e-mail">
                 <label for="senha">Senha</label>
-                <input type="password" v-model="senha" placeholder="Digite a sua senha">
+                <input type="password" name="senha" v-model="senha" placeholder="Digite a sua senha">
                 <div class="button_container">
                     <button type="submit" class="btn_profissional" click="login">Entrar como profissional</button>
                     <router-link to="/loginpaciente" class="btn_paciente">Entrar como paciente</router-link>
