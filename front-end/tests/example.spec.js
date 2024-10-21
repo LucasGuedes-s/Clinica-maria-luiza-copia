@@ -22,13 +22,13 @@ test('Teste de link', async ({ page }) => {
 });
 test('Teste de login automático', async ({ page }) => {
   // Acessa a página de login
-  await page.goto('https://clinica-maria-luiza-copia.vercel.app/login');
+  await page.goto('http://localhost:8080/login');
 
   // Preenche o campo de usuário
   await page.fill('input[name="email"]', 'admin@gmail.com');
   
   // Preenche o campo de senha
-  await page.fill('input[name="password"]', 'password');
+  await page.fill('input[name="senha"]', 'password');
 
   // Clica no botão de login
   await page.click('button[type="submit"]');
