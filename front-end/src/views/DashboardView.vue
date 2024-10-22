@@ -261,7 +261,7 @@ export default {
         
         async getAgendamentos(){
             const token = this.store.token
-            Axios.get(`https://clinica-maria-luiza-copia.onrender.com/profissionais/agendamentos/${this.email}`,{
+            Axios.get(`https://clinica-maria-luiza-copia-fqrm.onrender.com/profissionais/agendamentos/${this.email}`,{
                 headers: {
                     'Authorization': `Bearer ${token}`
                 }
@@ -274,7 +274,7 @@ export default {
         },
         async updateAgendamento(id){
             const token = this.store.token
-            Axios.get(`https://clinica-maria-luiza-copia.onrender.com/profissional/agendamento/${id}`,{
+            Axios.get(`https://clinica-maria-luiza-copia-fqrm.onrender.com/profissional/agendamento/${id}`,{
                 headers: {
                     'Authorization': `Bearer ${token}`
                 }

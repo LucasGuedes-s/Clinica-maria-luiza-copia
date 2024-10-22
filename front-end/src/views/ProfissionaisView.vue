@@ -231,7 +231,7 @@ export default {
                 });
                 // Faz a requisição para gerar o PDF
                 const response = await Axios({
-                    url: 'https://clinica-maria-luiza-copia.onrender.com/historico/consultas',
+                    url: 'https://clinica-maria-luiza-copia-fqrm.onrender.com/historico/consultas',
                     method: 'POST',
                     responseType: 'blob', // Para tratar a resposta como arquivo
                     data: {
@@ -262,7 +262,7 @@ export default {
         },
         async profissionais() {
             const token = this.store.token
-            Axios.get("https://clinica-maria-luiza-copia.onrender.com/profissionais", {
+            Axios.get("https://clinica-maria-luiza-copia-fqrm.onrender.com/profissionais", {
                 headers: {
                     'Authorization': `Bearer ${token}`
                 }

@@ -265,7 +265,7 @@ export default {
         },
         async pacientes() {
             const token = this.store.token
-            Axios.get("https://clinica-maria-luiza-copia.onrender.com/pacientes", {
+            Axios.get("https://clinica-maria-luiza-copia-fqrm.onrender.com/pacientes", {
                 headers: {
                     'Authorization': `Bearer ${token}`
                 }
@@ -351,7 +351,7 @@ export default {
         async addLaudo() {
             const token = this.store.token
             console.log(this.cpf, this.laudo)
-            Axios.post("https://clinica-maria-luiza-copia.onrender.com/paciente/laudos",
+            Axios.post("https://clinica-maria-luiza-copia-fqrm.onrender.com/paciente/laudos",
                 {
                     cpf: this.cpf,
                     laudo: this.laudo

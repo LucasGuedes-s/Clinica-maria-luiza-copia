@@ -169,7 +169,7 @@ export default {
             }
             else {
                 const nova_senha = this.senha
-                await Axios.post("https://clinica-maria-luiza-copia.onrender.com/user/alterar/senha", {
+                await Axios.post("https://clinica-maria-luiza-copia-fqrm.onrender.com/user/alterar/senha", {
                     usuario: {
                         email: this.email,
                         nova_senha: nova_senha,
