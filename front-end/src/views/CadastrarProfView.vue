@@ -203,7 +203,7 @@ methods: {
         else if(this.permissaoId == 'Recepcionista'){
             this.permissao = 3
         }
-        await Axios.post(`https://clinica-maria-luiza-copia-fqrm.onrender.com/cadastrar/profissional`, {
+        await Axios.post(`https://clinica-maria-luiza-copia.onrender.com/cadastrar/profissional`, {
             usuario: {
                 nome: this.nome,
                 data_nascimento: this.data_nascimento,

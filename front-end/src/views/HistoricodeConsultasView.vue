@@ -173,7 +173,7 @@ export default {
                 }
             });
             await Axios({
-                url: `https://clinica-maria-luiza-copia-fqrm.onrender.com/pdf/consulta/${id}`,  // Altere a URL conforme necessário
+                url: `https://clinica-maria-luiza-copia.onrender.com/pdf/consulta/${id}`,  // Altere a URL conforme necessário
                 method: 'GET',
                 responseType: 'blob',  // Importante para tratar a resposta como um blob
             }).then(response => {
@@ -198,7 +198,7 @@ export default {
             const token = this.store.token
             const cpf = this.cpf
 
-            Axios.get(`https://clinica-maria-luiza-copia-fqrm.onrender.com/consulta/paciente/${cpf}`, {
+            Axios.get(`https://clinica-maria-luiza-copia.onrender.com/consulta/paciente/${cpf}`, {
                 headers: {
                     'Authorization': `Bearer ${token}`
                 }

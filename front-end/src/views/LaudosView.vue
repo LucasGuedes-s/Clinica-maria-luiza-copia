@@ -141,7 +141,7 @@ export default {
             const token = this.store.token
             const cpf = this.cpf
 
-            Axios.get(`https://clinica-maria-luiza-copia-fqrm.onrender.com/paciente/dados/${cpf}`, {
+            Axios.get(`https://clinica-maria-luiza-copia.onrender.com/paciente/dados/${cpf}`, {
                 headers: {
                     'Authorization': `Bearer ${token}`
                 }

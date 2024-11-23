@@ -179,7 +179,7 @@ export default {
                 const token = this.store.token;
                 const valorFloat = parseFloat(this.valor);
 
-                await Axios.post("https://clinica-maria-luiza-copia-fqrm.onrender.com/registrar/pagamentos", {
+                await Axios.post("https://clinica-maria-luiza-copia.onrender.com/registrar/pagamentos", {
                     pagar: {
                         profissionalId: profissionalId,
                         valor: valorFloat,

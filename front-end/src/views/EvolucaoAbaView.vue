@@ -44,7 +44,7 @@ export default {
     },
     methods: {
         async getConsultas() {
-            await Axios.get(`https://clinica-maria-luiza-copia-fqrm.onrender.com/consultasAba/paciente/${this.cpf}`
+            await Axios.get(`https://clinica-maria-luiza-copia.onrender.com/consultasAba/paciente/${this.cpf}`
             ).then(response => {
                 const todasConsultas = response.data.consultas;
                 // Pegar os últimos 15 itens do array de consultas

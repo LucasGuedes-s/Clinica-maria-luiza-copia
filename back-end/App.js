@@ -17,8 +17,8 @@ app.use(function(req, res, next) {
   next();
 });
 
-const firstRun = require('./firstRun.util.js');
-firstRun.FirstRun();
+//const firstRun = require('./firstRun.util.js');
+//firstRun.FirstRun();
 
 //ROTAS
 app.get('/', (req, res) => {

@@ -130,7 +130,7 @@ export default {
 
             },
             async getAgenda() {
-                await Axios.get(`https://clinica-maria-luiza-copia-fqrm.onrender.com/pacientes/agendamentos/${this.cpf}`
+                await Axios.get(`https://clinica-maria-luiza-copia.onrender.com/pacientes/agendamentos/${this.cpf}`
                 ).then(response => {
                     this.agendamentos = response.data.agenda
                 }).catch(error => {
@@ -138,7 +138,7 @@ export default {
                 })
             },
             async getConsultasAba() {
-                await Axios.get(`https://clinica-maria-luiza-copia-fqrm.onrender.com/consultasAba/paciente/${this.cpf}`
+                await Axios.get(`https://clinica-maria-luiza-copia.onrender.com/consultasAba/paciente/${this.cpf}`
                 ).then(response => {
                     this.consulta = response.data.consultas.slice(-7)
                 }).catch(error => {
@@ -146,7 +146,7 @@ export default {
                 })
             },
             async getConsultas() {
-                Axios.get(`https://clinica-maria-luiza-copia-fqrm.onrender.com/consultas/paciente/${this.cpf}`,
+                Axios.get(`https://clinica-maria-luiza-copia.onrender.com/consultas/paciente/${this.cpf}`,
 
                 ).then(response => {
                     this.consultas = response.data.consultas.consultas.slice().reverse().slice(-7)
